@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>zTree模糊搜索Demo</title>
+
+	<link rel="stylesheet" href="ztree/css/zTreeStyle/zTreeStyle.css" type="text/css" />
+	<link rel="stylesheet" href="css/myStyle.css" type="text/css" />
+	<script type="text/javascript" src="ztree/js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="ztree/js/jquery.ztree.core-3.5.min.js"></script>
+	<script type="text/javascript" src="ztree/js/jquery.ztree.exhide-3.5.min.js"></script>
+	
+	<script type="text/javascript" src="js/myScript.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
+	<SCRIPT type="text/javascript">
+		<!--
+		var setting = {
+			data: {
+				key: {
+					title: "title"
+				},
+				simpleData: {
+					enable: true
+				}
+			}
+		};
+
+		var zNodes =[
+			{ id:1, pId:1, name:"a", title:"", open:true},
+			{ id:11, pId:1, name:"b", title:""},
+			{ id:111, pId:11, name:"c", title:""},
+			{ id:112, pId:11, name:"d", title:""},
+			{ id:113, pId:11, name:"", title:""},
+			{ id:12, pId:1, name:"e", title:""},
+			{ id:121, pId:12, name:"f", title:""},
+			{ id:122, pId:12, name:"g", title:""},
+			{ id:123, pId:12, name:"h", title:""},
+			{ id:2, pId:1, name:"i", title:""},
+			{ id:21, pId:2, name:"j", title:""},
+			{ id:211, pId:21, name:"k", title:""},
+			{ id:212, pId:21, name:"l", title:""},
+			{ id:213, pId:21, name:"m", title:""},
+			{ id:22, pId:2, name:"n", title:""},
+			{ id:221, pId:22, name:"o", title:""},
+			{ id:222, pId:22, name:"p", title:""},
+			{ id:223, pId:22, name:"q", title:""},
+			{ id:1, pId:0, name:"r", title:""},
+			{ id:11, pId:1, name:"s", title:""},
+			{ id:111, pId:11, name:"t", title:""},
+			{ id:112, pId:11, name:"u", title:""},
+			{ id:113, pId:11, name:"v", title:""},
+			{ id:12, pId:1, name:"w", title:""},
+			{ id:121, pId:12, name:"x", title:""},
+			{ id:122, pId:12, name:"y", title:""},
+			{ id:123, pId:12, name:"z", title:""},
+			{ id:2, pId:0, name:"a", title:""},
+			{ id:21, pId:2, name:"a", title:""},
+			{ id:211, pId:21, name:"b", title:""},
+			{ id:212, pId:21, name:"b", title:""},
+			{ id:213, pId:21, name:"c", title:""},
+			{ id:22, pId:2, name:"c", title:""},
+			{ id:221, pId:22, name:"d", title:""},
+			{ id:222, pId:22, name:"d", title:""},
+			{ id:223, pId:22, name:"d", title:""}
+		];
+		
+		$(document).ready(function(){
+			$.fn.zTree.init($("#dep_tree"), setting, zNodes);
+		
+		
+		});
+		//-->
+	</SCRIPT>
+</head>
+<body onload="">
+	<div class="container">
+		<div class="search-bar">
+			<input id="keyword" type="text" placeholder="请输入...">
+			<button id="search-bt">搜索</button>
+		</div>
+		<div class="content">
+			<ul id="tree-obj" class="ztree"></ul>
+		</div>
+	</div>
+
+
+
+    <div class="padd" style="padding-bottom: 0px;">
+        <div class="input-append row-fluid" style="margin-bottom: 0px;">
+            <input id="search_condition" type="text" placeholder="请输入搜索条件" class="span8" style="font-size:12px"/>
+            <button type="button" class="btn btn-info" onclick="search_ztree('dep_tree', 'search_condition')">搜索</button>
+        </div>
+    </div>
+ 
+    <ul id="dep_tree" class="ztree"></ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>zTree模糊搜索Demo</title>
+
+	<link rel="stylesheet" href="ztree/css/zTreeStyle/zTreeStyle.css" type="text/css" />
+	<link rel="stylesheet" href="css/myStyle.css" type="text/css" />
+	<script type="text/javascript" src="ztree/js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="ztree/js/jquery.ztree.core-3.5.min.js"></script>
+	<script type="text/javascript" src="ztree/js/jquery.ztree.exhide-3.5.min.js"></script>
+	
+	<script type="text/javascript" src="js/myScript.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
+</head>
+<body onload="">
+	<div class="container">
+		<div class="search-bar">
+			<input id="keyword" type="text" placeholder="请输入...">
+			<button id="search-bt">搜索</button>
+		</div>
+		<div class="content">
+			<ul id="tree-obj" class="ztree"></ul>
+		</div>
+	</div>
+
+
+<!--搜索框-->
+    <div class="padd" style="padding-bottom: 0px;">
+        <div class="input-append row-fluid" style="margin-bottom: 0px;">
+            <input id="search_condition" type="text" placeholder="请输入搜索条件" class="span8" style="font-size:12px"/>
+            <button type="button" class="btn btn-info" onclick="search_ztree('dep_tree', 'search_condition')">搜索</button>
+        </div>
+    </div>
+    <!--树-->
+    <ul id="dep_tree" class="ztree"></ul>
+</body>
+</html>
