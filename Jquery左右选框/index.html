@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        .centent
+        {
+            width: 260px;
+        }
+        .cententl
+        {
+            float: left;
+        }
+        
+        .btnAdd
+        {
+            float: left;
+            padding:30px 5px;
+        }
+    </style>
+    <script src="scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            //移到右边
+            $('#btnAdd').click(function () {
+                //获取选中的选项，删除自己并追加给对方
+                $('#select1 option:selected').appendTo('#select2');
+            });
+            //移到左边
+            $('#btnDel').click(function () {
+                //获取选中的选项，删除自己并追加给对方
+                $('#select2 option:selected').appendTo('#select1');
+            });
+            //全部移到右边
+            $('#btnAdds').click(function () {
+                //获取全部的选项,删除自己并追加给对方
+                $('#select1 option').appendTo('#select2');
+            });
+            //全部移到左边
+            $('#btnDels').click(function () {
+                //获取全部的选项,删除自己并追加给对方
+                $('#select2 option').appendTo('#select1');
+            });
+            //双击选项
+            $('#select1').dblclick(function () { 
+                //获取双击的选项,删除自己并追加给对方
+                $("option:selected", this).appendTo('#select2'); 
+            });
+            //双击选项
+            $('#select2').dblclick(function () {
+                //获取双击的选项,删除自己并追加给对方
+                $("option:selected", this).appendTo('#select1');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="centent">
+        <div class="cententl">
+            <select multiple="multiple" id="select1" style="width: 100px; height: 160px;">
+                <option value="1">课程1</option>
+                <option value="2">课程2</option>
+                <option value="3">课程3</option>
+                <option value="4">课程4</option>
+                <option value="5">课程5</option>
+                <option value="6">课程6</option>
+                <option value="7">课程7</option>
+                <option value="8">课程8</option>
+            </select>
+        </div>
+        <div class="btnAdd">
+            <input type="button" id="btnAdd" value=" > " /><br />
+            <input type="button" id="btnDel" value=" < " /><br />
+            <input type="button" id="btnAdds" value=">>" /><br />
+            <input type="button" id="btnDels" value="<<" />
+        </div>
+        <div>
+            <select multiple="multiple" id="select2" style="width: 100px; height: 160px;">
+            </select>
+        </div>
+    </div>
+</body>
+</html>
